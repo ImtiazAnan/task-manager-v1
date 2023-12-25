@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="again.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+</head>
+<body>
+<div class="all">
+<div class="theme"><h1>You are Welcome</h1></div><div class="inp__container">
+    <h2>My ToDO List</h2>
+    <div class="inp"><input type="text" placeholder="Type Here....." class="task__input">
+    <input type="date" class="date__input"></div>
+    <div><button onclick="addTask()" class="btn">Add Task</button></div>
+</div>
+    <div class="task__container">
+
+    </div>
+</div>
+    
+    <script>
+        let tasks=[   ]
+        let retrieveTask =JSON.parse(localStorage.getItem('anan'))
+        if(Array.isArray(retrieveTask)){
+            tasks=retrieveTask
+        }
+        else{
+            tasks=[   ]
+        }
+        renderTask()
+        function addTask(){
+
+            let taskInput =  document.querySelector('.task__input')
+            let dateInput =  document.querySelector('.date__input')
+
+            let givenTask = taskInput.value
+            taskInput.value=''
+
+            let givenDate = dateInput.value
+            dateInput.value = ''
+            const id= new Date().getTime().toString()
+// ___________________task push____________________________
+
+            tasks.push({title: givenTask, dueDate: givenDate,id: id})
+saveTask()
+
+                renderTask()
+
+            
+        }
+        // delete task---
+
+    function deleteTask(event){
+        const deleteButt = event.target
+        console.log(deleteButt)
+        const idTobedeleted = deleteButt.id
+
+       tasks= tasks.filter(function(task){
+            if(task.id===idTobedeleted){
+                return false
+            }else{
+                return true
+            }
+        });
+        renderTask()
+
+    }
+
+    
+function saveTask(){
+localStorage.setItem('anan',JSON.stringify(tasks))}
+
+
+
+
+
+// --------------------------------------------------------------
+        function renderTask(){
+            document.querySelector('.task__container').innerHTML=''
+
+            tasks.forEach(function(task,index){
+                
+                let element=document.createElement('div')
+                
+                element.innerText = task.title
+
+                let taskList= document.querySelector('.task__container')
+                let datepara= document.createElement('p')
+                datepara.innerHTML=task.dueDate
+                let deleteButton = document.createElement('span')
+                deleteButton.innerHTML='\u00d7'
+
+
+                // deleteButton.style='position:absolute;right:8px; '
+                
+                deleteButton.onclick = deleteTask
+                deleteButton.id=task.id
+                taskList.appendChild(element)
+                element.appendChild(datepara)
+                element.appendChild(deleteButton)
+                
+
+                
+            })
+        }
+
+
+
+
+
+
+
+    </script>
+</body>
+</html>
