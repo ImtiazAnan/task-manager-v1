@@ -1,150 +1,151 @@
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
-body{
-    background: linear-gradient(rgb(31, 30, 30),black,rgb(35, 36, 65));
-    width: 100%;
-    height: 100vh;
+body {
+  background: linear-gradient(rgb(31, 30, 30), black, rgb(35, 36, 65));
+  width: 100%;
+  height: 100vh;
 }
-.all{margin-top: 10px;font-family: Arial, Helvetica, sans-serif;}
-.task__container{
-    width: 700px;
-    background-color: rgb(250, 247, 247);
-    margin: auto;
-    margin-top: 10px;
-    height: 430px;
-    box-shadow: 0px 01px  9px  rgb(172, 171, 171);
-    border-bottom-left-radius: 10px;
-    border-bottom-right-radius:10px;
-    overflow-y: auto;
-    position: relative;
+.all {
+  margin-top: 10px;
+  font-family: Arial, Helvetica, sans-serif;
+}
+.task__container {
+  width: 700px;
+  background-color: rgb(250, 247, 247);
+  margin: auto;
+  margin-top: 10px;
+  height: 430px;
+  box-shadow: 0px 01px 9px rgb(172, 171, 171);
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+  overflow-y: auto;
+  position: relative;
+}
+.task__container div {
+  padding: 10px;
+  padding-left: 10px;
+  border-bottom: 1px solid rgb(14, 151, 255);
+  width: 580px;
+  margin: auto;
+  margin-bottom: 5px;
+  overflow: auto;
+  align-items: center;
+  font-size: 13px;
+}
+h2 {
+  display: inline-block;
+  color: rgb(54, 176, 206);
+  border: 2px solid rgb(255, 255, 255);
+  padding: 0 6px;
+  background-color: #fff;
+}
+.body {
+  width: 100%;
+}
+.inp__container {
+  width: 700px;
+  height: 120px;
+  background-color: rgb(54, 176, 206);
+  margin: auto;
+  text-align: center;
+  box-shadow: 1px 01px 9px rgb(124, 24, 255);
+  margin-top: 13px;
+}
+.inp {
+  display: flex;
+  margin-top: 5px;
+  gap: 0;
+  align-items: center;
+  justify-content: center;
+}
 
-
+.task__input {
+  height: 30px;
+  width: 500px;
+  border-radius: 50px;
+  outline: none;
+  border: 1px solid skyblue;
+  padding-left: 10px;
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+  border-right: 0;
 }
-.task__container div{
-    padding: 10px;
-    padding-left: 10px; 
-    border-bottom: 1px solid rgb(14, 151, 255);
-    width: 580px;
-    margin: auto;
-    margin-bottom: 5px;
-    overflow: auto;
-    align-items: center;
-    font-size: 13px;
-    
-
-
+.date__input {
+  height: 30px;
+  border-top-right-radius: 50px;
+  border-bottom-right-radius: 50px;
+  outline: none;
+  border: 1px solid skyblue;
+  border-left: 0;
 }
-h2{ display: inline-block;
-    color: rgb(54, 176, 206);
-    border: 2px solid rgb(255, 255, 255);
-    padding: 0 6px;
-    background-color: #fff;
+.btn {
+  width: 50%;
+  margin-top: 5px;
+  outline: none;
+  border: none;
+  background-color: rgb(124, 247, 120);
+  padding: 5px;
+  border-radius: 10px;
+  box-shadow: 0 8px 1px rgb(79, 223, 57);
+  transition: 0.2s ease;
+  color: rgb(52, 73, 90);
+  font-weight: 800;
+  margin-bottom: 22px;
 }
-.body
-{
-    width: 100%;
+.btn:active {
+  box-shadow: none;
+  transform: translateY(8px);
+  background-color: rgb(92, 237, 87);
 }
-.inp__container{
-    width: 700px;
-    height: 120px;
-    background-color: rgb(54, 176, 206);
-    margin: auto;
-    text-align: center;    box-shadow: 1px 01px  9px  rgb(124, 24, 255);
-    margin-top: 13px;
-
+.task__container div span {
+  font-size: 19px;
+  color: red;
+  cursor: pointer;
+  transition: 0.5s ease;
+  position: absolute;
+  right: 15px;
+  font-weight: 600;
+  border-radius: 50%;
+  background-color: rgb(226, 226, 226);
+  padding: 2px 8px;
 }
-.inp{
-    display: flex;margin-top: 5px;
-    gap: 0;
-    align-items: center;    justify-content: center;
-
+.task__container div span:hover {
+  transform: translateY(-3px);
+  box-shadow: 1px 1px 10px 2px rgb(249, 10, 10);
+  background-color: #fff;
 }
-
-.task__input{
-    height: 30px;width: 500px;
-    border-radius: 50px;outline: none;
-    border: 1px solid skyblue;padding-left: 10px;
-    border-top-right-radius: 0;
-    border-bottom-right-radius: 0;
-    border-right: 0;
-
+.task__container div p {
+  position: absolute;
+  right: 55px;
+  display: inline-block;
 }
-.date__input{
-    height: 30px;
-    border-top-right-radius: 50px;
-    border-bottom-right-radius: 50px;
-    outline: none;
-    border: 1px solid skyblue;
-    border-left: 0;
+.theme {
+  width: 100%;
+  background: linear-gradient(rgb(6, 150, 240), rgb(23, 108, 193));
+  display: flex;
+  height: 39px;
+  align-items: center;
+  justify-content: center;
 }
-.btn{
-    width: 50%;
-    margin-top: 5px;
-    outline: none;
-    border: none;
-    background-color: rgb(124, 247, 120);
-    padding: 5px;border-radius: 10px;
-    box-shadow: 0 8px 1px  rgb(79, 223, 57);
-    transition: .2s ease;color: rgb(52, 73, 90);font-weight: 800;
-    margin-bottom: 22px;
+.im {
+  background-color: rgb(15, 16, 15);
+  padding: 7px 15px;
+  color: white;
+  font-weight: 800;
+  margin-top: 12px;
+  border-radius: 5px;
 }
-.btn:active{
-    box-shadow: none;
-    transform: translateY(8px);
-    background-color: rgb(92, 237, 87);
-
+.an {
+  color: rgb(20, 20, 20);
+  margin-left: 55px;
+  font-weight: 600;
+  padding-right: 10px;
+  background-color: aqua;
+  border: 1px solid black;
 }
-.task__container  div span{
-    font-size: 19px;
-    color: red;
-    cursor: pointer;
-    transition: .5s ease;
-    position: absolute;
-    right: 15px;
-    font-weight: 600;
-    border-radius: 50%;
-    background-color: rgb(226, 226, 226);
-    padding: 2px 8px;
-
-}
-.task__container  div span:hover{
-    transform: translateY(-3px);
-    box-shadow: 1px 1px 10px 2px rgb(249, 10, 10);
-    background-color: #fff;
- 
-}
-.task__container div p{
-    position: absolute;
-    right: 55px;
-    display: inline-block;
-}
-.theme{
-    width: 100%;
-    background: linear-gradient( rgb(6, 150, 240),rgb(23, 108, 193));
-    display: flex;
-    height: 39px;
-    align-items: center;
-    justify-content: center;
-}
-.im{
-    background-color: rgb(15, 16, 15);
-    padding: 7px 15px;
-    color: white;
-    font-weight: 800;
-    margin-top: 12px;
-    border-radius: 5px;
-}
-.an{
-    color: rgb(20, 20, 20);
-    margin-left: 55px;
-    font-weight: 600;
-    padding-right: 10px;
-    background-color: aqua;
-    border: 1px solid black;
-}
-.theme h1{
-    color:rgb(255, 255, 255);
+.theme h1 {
+  color: rgb(255, 255, 255);
 }
